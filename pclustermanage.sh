@@ -1,5 +1,5 @@
 #!/bin/bash
-pcluster -r us-east-1 ssh dmscluster -i divine-showmik.pem 'bash -s' < main.sh
+pcluster  ssh dmscluster -r us-east-1 -i divine-showmik.pem 'bash -s' < main.sh
 
 
 sudo yum install git -y
