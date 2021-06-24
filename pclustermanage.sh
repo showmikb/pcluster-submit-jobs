@@ -1,4 +1,5 @@
 #!/bin/bash
+export  PATH='/sbin:/bin:/usr/sbin:/usr/bin:~/.local/bin/'
 pcluster  ssh dmscluster -r us-east-1 -i divine-showmik.pem 
 #'bash -s' < main.sh
 
