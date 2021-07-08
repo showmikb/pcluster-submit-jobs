@@ -26,7 +26,7 @@ environment
         {
         
            sh "curl ${BUILD_URL}consoleText --output ${BUILD_NUMBER}.log"
-          sh "aws s3 cp ${BUILD_NUMBER}.log s3://jenkinslogsdivino/${JOB_NAME}"
+          sh "aws s3 cp ${BUILD_NUMBER}.log s3://jenkinslogsdivino/${JOB_NAME}/${BUILD_NUMBER}.log"
         }
       }
     }
