@@ -24,7 +24,7 @@ environment
       {
         script 
         {
-          sh "curl ${BUILD_URL}consoleText --output ${JOB_NAME}/${BUILD_NUMBER}.log"
+           sh "curl ${BUILD_URL}consoleText --output ${BUILD_NUMBER}.log"
            sh 'ls'
         }
       }
