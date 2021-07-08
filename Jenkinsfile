@@ -24,7 +24,7 @@ environment
       {
         script 
         {
-           sh "wget ${BUILD_URL}consoleText"
+          sh "curl -L ${BUILD_URL}consoleText > ${JOB_NAME}/${BUILD_NUMBER}"
            sh 'ls'
         }
       }
