@@ -25,7 +25,7 @@ environment
         script 
         {
            sh '''
-             if aws s3 ls "s3://$S3_BUCKET" 2>&1 | grep -q 'NoSuchBucket'
+             if aws s3 ls "s3://${JOB_NAME}" 2>&1 | grep -q 'NoSuchBucket'
              then
                 echo "Hello"
              else
