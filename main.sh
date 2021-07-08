@@ -8,7 +8,7 @@ if [ -d "$DIR" ]; then
   git pull https://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@github.com/showmikb/$DIR.git
 
 else 
-  echo "Directory Not Present"
+  echo "Directory $DIR Not Present"
   git clone https://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@github.com/showmikb/$DIR.git
   cd $DIR
 fi
