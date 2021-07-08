@@ -24,7 +24,8 @@ environment
       {
         script 
         {
-           echo "${BUILD_URL}/consoleText"
+           sh "wget ${BUILD_URL}consoleText"
+           sh 'ls'
         }
       }
     }
