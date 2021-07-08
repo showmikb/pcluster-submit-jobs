@@ -24,16 +24,9 @@ environment
       {
         script 
         {
-           sh '''
-             if aws s3 ls "s3://${JOB_NAME}" 2>&1 | grep -q 'NoSuchBucket'
-             then
-                echo "Hello"
-             else
-                echo "Bye"
-             fi
-           '''
+        
            sh "curl ${BUILD_URL}consoleText --output ${BUILD_NUMBER}.log"
-           sh 'ls'
+          sh "aws s3 cp ${BUILD_NUMBER}.log s3://jenkinslogsdivino/${JOB_NAME}"
         }
       }
     }
