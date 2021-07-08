@@ -5,11 +5,11 @@ if [ -d "$DIR" ]; then
   # Take action if $DIR exists. #
   echo "${DIR} Present"
   cd $DIR
-  git pull https://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@github.com/showmikb/$DIR.git
+  git pull https://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@github.com/showmikb/pcluster-submit-jobs.git
 
 else 
   echo "Directory $DIR Not Present"
-  git clone https://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@github.com/showmikb/$DIR.git
+  git clone https://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@github.com/showmikb/pcluster-submit-jobs.git
   cd $DIR
 fi
 
