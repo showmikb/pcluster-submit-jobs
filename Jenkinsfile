@@ -38,6 +38,28 @@ environment
         }
       }
     }
-   
+//     stage('Send SNS Notification') 
+//     {
+//       steps 
+//       {
+//         script 
+//         {
+//           sh "aws sns publish \
+//               --topic-arn \"arn:aws:sqs:us-east-1:876279908261:sns-jenkins-build-notifier.fifo\" \
+//               --message file://message.txt"
+//         }
+//       }
+//     }
   }
+  
+   post { 
+        always { 
+            script 
+              {
+                sh "aws sns publish \
+                    --topic-arn \"arn:aws:sqs:us-east-1:876279908261:sns-jenkins-build-notifier.fifo\" \
+                --message \"Job : ${JOB_NAME} with Number # ${BUILD_NUMBER} has completed.\""
+              }
+        }
+    }
 }
