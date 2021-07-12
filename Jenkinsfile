@@ -58,7 +58,7 @@ environment
               {
                 sh "aws sns --region us-east-1 publish \
                     --subject \"Jenkins ${JOB_NAME} build status\" \
-                    --topic-arn \"arn:aws:sqs:us-east-1:876279908261:sns-jenkins-build-notifier.fifo\" \
+                    --topic-arn \"arn:aws:sns:us-east-1:876279908261:jenkins-notifier\" \
                     --message \"Job : ${JOB_NAME} :- Job Number # ${BUILD_NUMBER} - has completed. Visit s3://jenkinslogsdivino/${JOB_NAME}/${BUILD_NUMBER}.log for more details.\""
               }
         }
